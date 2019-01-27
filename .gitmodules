@@ -1,0 +1,3 @@
+[submodule "docker/db/dbini"]
+	path = docker/db/dbini
+	url = git@github.com:sharavara/tt-db.git
