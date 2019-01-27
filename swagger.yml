@@ -1,0 +1,124 @@
+---
+swagger: "2.0"
+info:
+  title: TestTask
+  description: This is test task for candidates
+  version: 1.0.0
+paths:
+  /clients:
+    get:
+      tags:
+      - clients
+      summary: Get all clients
+      operationId: getClients
+      responses:
+        200:
+          description: Returns all clients
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/client'
+    post:
+      tags:
+      - clients
+      summary: Create client
+      operationId: createClient
+      parameters:
+      - name: body
+        in: body
+        description: Create client
+        required: true
+        schema:
+          $ref: '#/definitions/clientPOST'
+      responses:
+        200:
+          description: Returns client ID
+          schema:
+            type: integer
+        400:
+          description: Some error
+          schema:
+            type: string
+  /clients/{id}:
+    get:
+      tags:
+      - clients
+      summary: Get Client by ID
+      operationId: getOneCLient
+      responses:
+        200:
+          description: Client's information
+          schema:
+            $ref: '#/definitions/client'
+        404:
+          description: Not found
+    parameters:
+    - name: id
+      in: path
+      description: Client ID
+      required: true
+      type: integer
+definitions:
+  client:
+    title: Root Type for client
+    description: Client's model
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      last_name:
+        type: string
+      first_name:
+        type: string
+      dob:
+        format: date
+        type: string
+      social_status_id:
+        format: int32
+        type: integer
+      social_status:
+        type: string
+      gender_id:
+        type: string
+      gender:
+        type: string
+    example: |-
+      {
+          "id": 1,
+          "last_name": "Sharavara",
+          "first_name": "Vitalii",
+          "dob": "1990-11-12",
+          "social_status_id": 2,
+          "social_status": "Married",
+          "gender_id": "M",
+          "gender": "Male"
+      }
+  clientPOST:
+    title: Root Type for clientPOST
+    description: The root of the clientPOST type's schema.
+    type: object
+    properties:
+      last_name:
+        type: string
+      first_name:
+        type: string
+      dob:
+        format: date
+        type: string
+      social_status_id:
+        format: int32
+        type: integer
+      gender:
+        type: string
+    example: |-
+      {
+          "last_name": "Sharavara",
+          "first_name": "Vitalii",
+          "dob": "1990-11-12",
+          "social_status_id": 2,
+          "gender": "M"
+      }
+tags:
+- name: clients
+  description: Operations with clients
