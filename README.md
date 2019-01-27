@@ -9,3 +9,11 @@ The test task's goals:
 ## Database
 
 This is test database [tt-db](https://github.com/sharavara/tt-db). It's connected to the current project as git submodule
+
+## Requirements
+
+**Framework**: `Flask`
+
+**Unit tests**: are not mandatory
+
+**Estimation time**: 1 hour
