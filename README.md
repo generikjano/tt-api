@@ -16,4 +16,4 @@ This is test database [tt-db](https://github.com/sharavara/tt-db). It's connecte
 
 **Unit tests**: are not mandatory
 
-**Estimation time**: 1 hour
+**Estimation time**: 1-2 hours
