@@ -6,6 +6,10 @@ The test task's goals:
 - Make Dockerfile
 - Create docker-compose file to run the API and database
 
+## Swagger documentation
+
+[Open swagger doc](https://app.swaggerhub.com/apis-docs/sharavara/test-task/1.0.0)
+
 ## Database
 
 This is test database [tt-db](https://github.com/sharavara/tt-db). It's connected to the current project as git submodule
