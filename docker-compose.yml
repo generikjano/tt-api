@@ -20,5 +20,20 @@ services:
     networks:
       - tt
 
+  tt-api:
+    build:
+      context: first_digital_finance_app
+      dockerfile: Dockerfile
+    container_name: tt-api
+    environment:
+      - DB_HOST=tt-db
+      - DB_PORT=5432
+    ports:
+      - "5000:5000"
+    networks:
+      - tt
+    depends_on:
+      - "db"
+
 networks:
   tt:
