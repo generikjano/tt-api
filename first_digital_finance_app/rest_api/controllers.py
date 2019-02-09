@@ -6,7 +6,7 @@ from sqlalchemy.orm import aliased
 
 import rest_api.models as m
 
-api = Namespace('api', description='Test task for the candidates')
+api = Namespace('', description='Test task for the candidates')
 
 
 class ClientCreateSchema(Schema):
